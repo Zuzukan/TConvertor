@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TConvertor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="i4l-qM-lOc">
+                                <rect key="frame" x="-12" y="-10" width="344" height="589"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature convertor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNc-8g-A7J" userLabel="TConvertor">
+                                <rect key="frame" x="60" y="35" width="200" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="F7X-JQ-FJ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="35"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tkg-mn-LR5">
+                                <rect key="frame" x="58" y="363" width="204" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Wce-Z9-uDy"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0ºF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Z-TS-4IO">
+                                <rect key="frame" x="120.5" y="432" width="79.5" height="80"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvg-Ga-hAU">
+                                <rect key="frame" x="118" y="244" width="84" height="80"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="wNc-8g-A7J" firstAttribute="top" secondItem="i4l-qM-lOc" secondAttribute="top" constant="45" id="7mP-yf-csl"/>
+                            <constraint firstItem="Tkg-mn-LR5" firstAttribute="top" secondItem="Yvg-Ga-hAU" secondAttribute="bottom" constant="39" id="8zs-9L-6Rb"/>
+                            <constraint firstItem="Tkg-mn-LR5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="LuH-hc-PD5"/>
+                            <constraint firstItem="i4l-qM-lOc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-12" id="UcB-Hj-pD4"/>
+                            <constraint firstItem="Q4Z-TS-4IO" firstAttribute="top" secondItem="Tkg-mn-LR5" secondAttribute="bottom" constant="39" id="eTg-bT-0KX"/>
+                            <constraint firstItem="i4l-qM-lOc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-10" id="jEa-OH-Aca"/>
+                            <constraint firstItem="Yvg-Ga-hAU" firstAttribute="centerX" secondItem="i4l-qM-lOc" secondAttribute="centerX" id="rgm-Fg-NNh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tkg-mn-LR5" secondAttribute="trailing" constant="60" id="sXs-JH-uAY"/>
+                            <constraint firstItem="Q4Z-TS-4IO" firstAttribute="centerX" secondItem="Tkg-mn-LR5" secondAttribute="centerX" id="sbN-bb-JCU"/>
+                            <constraint firstItem="wNc-8g-A7J" firstAttribute="centerX" secondItem="i4l-qM-lOc" secondAttribute="centerX" id="srN-gv-CoY"/>
+                            <constraint firstItem="Yvg-Ga-hAU" firstAttribute="top" secondItem="wNc-8g-A7J" secondAttribute="bottom" constant="97" id="vEy-Kd-nHl"/>
+                            <constraint firstAttribute="trailing" secondItem="i4l-qM-lOc" secondAttribute="trailing" constant="-12" id="yL8-QB-6fp"/>
+                            <constraint firstAttribute="bottom" secondItem="i4l-qM-lOc" secondAttribute="bottom" constant="-11" id="yxl-6v-D1K"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="celciuseLabel" destination="Yvg-Ga-hAU" id="61M-5J-YGE"/>
+                        <outlet property="fahrenheitLabel" destination="Q4Z-TS-4IO" id="CEv-JO-oDJ"/>
+                        <outlet property="sliderSetup" destination="Tkg-mn-LR5" id="NEb-Wu-Mp5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="60" y="-37"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sun" width="375" height="667"/>
+    </resources>
 </document>
